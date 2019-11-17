@@ -1,0 +1,5 @@
+POINT = '.'
+WHITESPACE = ' '
+COMMA = ','
+QUESTION = '?'
+EXCLAMATION = '!'
