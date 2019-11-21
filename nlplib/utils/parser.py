@@ -1,14 +1,14 @@
-import logging
-
 from nlplib.core.document import Document
+from nlplib.utils.logger import Logger
 
 
 class Parser:
-    logging.config.fileConfig('../../config/logger.yaml', False)
+    def __init__(self):
+        self.logger = Logger()
+        pass
 
-    @staticmethod
-    def parseFile(filename):
-        logging.info('parsing file')
+    def parse_file(self, filename):
+        self.logger.log.debug('parse file')
 
         with open(filename) as file:
             author = file.readline()
@@ -21,18 +21,14 @@ class Parser:
 
             return Document(author, title, pubDate, text)
 
-    @staticmethod
-    def parseDocument(document):
-        logging.info('parsing document')
+    def parse_document(self, document):
+        self.logger.log.debug('parse document')
 
-    @staticmethod
-    def parseText(text):
-        logging.info('parsing text')
+    def parse_text(self, text):
+        self.logger.log.debug('parse text')
 
-    @staticmethod
-    def parseSentence(sentence):
-        logging.info('parsing sentence')
+    def parse_sentence(self, sentence):
+        self.logger.log.debug('parse sentence')
 
-    @staticmethod
-    def parseWord(word):
-        logging.info('parsing word')
+    def parse_word(self, word):
+        self.logger.log.debug('parse word')
