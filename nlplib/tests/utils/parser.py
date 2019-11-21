@@ -17,4 +17,3 @@ class TestParser:
 if __name__ == "__main__":
     parser = Parser()
     parser.parse_file('../assets/data/sample1.txt')
-
