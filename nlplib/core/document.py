@@ -1,5 +1,5 @@
 class Document:
-    def __init__(self, author=None, title=None, text=None):
+    def __init__(self, author=None, title=None, pubDate=None, text=None):
         if isinstance(author, str):
             self._author = author
         else:
@@ -9,6 +9,11 @@ class Document:
             self._title = title
         else:
             Exception('title should be string')
+
+        if isinstance(pubDate, str):
+            self._pubDate = pubDate
+        else:
+            Exception('date should be string')
 
         if isinstance(text, str):
             self._text = text
@@ -22,6 +27,10 @@ class Document:
     @property
     def title(self):
         return self._title
+
+    @property
+    def pubDate(self):
+        return self._pubDate
 
     @property
     def text(self):
