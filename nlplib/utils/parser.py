@@ -10,16 +10,14 @@ class Parser:
     def parse_file(self, filename):
         self.logger.log.debug('parse file')
 
+        author, title, pubDat, text = '', '', '', ''
         with open(filename) as file:
             author = file.readline()
             title = file.readline()
             pubDate = file.readline()
+            text = " ".join(line.strip() for line in file)
 
-            text = file.readline()
-            while text:
-                text = text + file.readline()
-
-            return Document(author, title, pubDate, text)
+        return Document(author, title, pubDate, text)
 
     def parse_document(self, document):
         self.logger.log.debug('parse document')
